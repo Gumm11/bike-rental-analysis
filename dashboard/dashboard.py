@@ -28,6 +28,12 @@ day_df['date'] = pd.to_datetime(day_df['date'])
 min_date = day_df['date'].min().date()
 max_date = day_df['date'].max().date()
 
+day_df['date'] = pd.to_datetime(day_df['date'])
+hour_df['date'] = pd.to_datetime(hour_df['date'])
+
+filtered_day_df = day_df[(day_df['date'] >= pd.to_datetime(start_date)) & (day_df['date'] <= pd.to_datetime(end_date))]
+filtered_hour_df = hour_df[(hour_df['date'] >= pd.to_datetime(start_date)) & (hour_df['date'] <= pd.to_datetime(end_date))]
+
 # Date range input with fallback for end date
 date_range = st.sidebar.date_input(
     "Select date range:",
