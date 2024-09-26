@@ -23,8 +23,8 @@ st.title("Bike Rental Data Analysis")
 st.sidebar.header("Bike Rental Dashboard")
 st.sidebar.image("https://img.freepik.com/free-vector/commuting-by-bike-concept-illustration_114360-28232.jpg?w=826&t=st=1727330117~exp=1727330717~hmac=eaebd8f9d38372e840f921e4e2823a8e67ddd29bad22112ada47d22dc7c6ca35")
 
-min_date = day_df['date'].min()
-max_date = day_df['date'].max()
+min_date = day_df['date'].min().date()
+max_date = day_df['date'].max().date()
 
 # Date range input with fallback for end date
 date_range = st.sidebar.date_input(
