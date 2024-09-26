@@ -9,9 +9,6 @@ import numpy as np
 def load_data():
     day_df = pd.read_csv('day.csv')
     hour_df = pd.read_csv('hour.csv')
-    # Convert date columns to datetime
-    day_df['date'] = pd.to_datetime(day_df['date'])
-    hour_df['date'] = pd.to_datetime(hour_df['date'])
     return day_df, hour_df
 
 # Load the dataset
